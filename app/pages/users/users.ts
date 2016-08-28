@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import {GithubUsers} from '../../providers/github-users/github-users';
+import {User} from '../../models/user';
 
 /*
   Generated class for the UsersPage page.
@@ -15,13 +16,12 @@ import {GithubUsers} from '../../providers/github-users/github-users';
 })
 export class UsersPage {
 
+  users: User[];
+
   constructor(private navCtrl: NavController, githubUsers: GithubUsers) {
     githubUsers
       .load()
-      .then(function (users) {
-        // Log the returned github users
-        console.log(users)
-      });
+      .then( users => this.users = users);
   }
 
 }
