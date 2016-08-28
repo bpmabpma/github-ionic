@@ -12,8 +12,7 @@ import {UserDetailsPage} from '../user-details/user-details';
   Ionic pages and navigation.
 */
 @Component({
-  templateUrl: 'build/pages/users/users.html',
-  providers: [GithubUsers]
+  templateUrl: 'build/pages/users/users.html'
 })
 export class UsersPage {
 

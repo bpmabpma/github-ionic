@@ -11,9 +11,7 @@ import {User} from '../../models/user';
   Ionic pages and navigation.
 */
 @Component({
-  templateUrl: 'build/pages/user-details/user-details.html',
-  //Add GithubUsers provider
-  providers: [GithubUsers]
+  templateUrl: 'build/pages/user-details/user-details.html'
 })
 export class UserDetailsPage {
   user: User = new User;
@@ -23,8 +21,7 @@ export class UserDetailsPage {
     this.login = navParams.get('login');
     // Get the user details and log
     githubUsers.loadDetails(this.login)
-      .then( user => console.log(user)
-      );
+      .then( user => this.user = user)
   }
 
 }
